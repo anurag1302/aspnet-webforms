@@ -10,7 +10,7 @@
                         <asp:CheckBox runat="server" ID="chkHeader" AutoPostBack="true" OnCheckedChanged="chkHeader_CheckedChanged" />
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <asp:CheckBox runat="server" ID="chkRow" />
+                        <asp:CheckBox runat="server" ID="chkRow" AutoPostBack="true" OnCheckedChanged="chkRow_CheckedChanged" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="ID" HeaderText="Id" ItemStyle-Width="100" />

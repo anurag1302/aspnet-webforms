@@ -70,5 +70,24 @@ namespace WebFormsSample
             gridViewEmployee.DataSource = dt;
             gridViewEmployee.DataBind();
         }
+
+        protected void chkRow_CheckedChanged(object sender, EventArgs e)
+        {
+            var allChecked = true;
+            foreach(GridViewRow row in gridViewEmployee.Rows)
+            {
+                CheckBox chkRow = (CheckBox)row.FindControl("chkRow");
+                if(chkRow != null && !chkRow.Checked) 
+                {
+                    allChecked = false;
+                    break;
+                }
+            }
+            CheckBox chkHeader = (CheckBox)gridViewEmployee.HeaderRow.FindControl("chkHeader");
+            if(chkHeader !=null)
+            {
+                chkHeader.Checked = allChecked;
+            }
+        }
     }
 }
